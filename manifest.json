@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,
+
+  "name": "Boursorama Stock Exchange MyValues",
+  "description": "Show your stock exchange values imported from another trading board in your Boursorama List.",
+  "version": "0.0.1",
+  "author": "Germain LEFEBVRE",
+  
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "declarativeContent",
+    "storage",
+    "cookies",
+    "geolocation",
+
+    "https://www.boursorama.com/espace-membres/mes-listes/*"
+  ],
+
+  "content_scripts": [{
+    "css": [],
+    "js": ["main.js"],
+    "matches": [
+      "https://www.boursorama.com/espace-membres/mes-listes/*"
+    ]
+  }]
+}
