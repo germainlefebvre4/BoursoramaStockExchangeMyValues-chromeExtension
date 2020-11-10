@@ -1,4 +1,4 @@
-name: Release
+name: Release Management
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  Semantic Release:
+  semantic-release:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
@@ -28,7 +28,7 @@ jobs:
         id: semantic
         with:
           branches: 'main'
-          semantic_version: 15.13.28
+          semantic_version: 17.2.2
           extra_plugins: |
             @semantic-release/commit-analyzer@8.0.1
             @semantic-release/release-notes-generator@9.0.0
