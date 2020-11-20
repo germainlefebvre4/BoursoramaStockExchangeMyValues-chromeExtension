@@ -3,14 +3,14 @@
 
   "name": "Boursorama Stock Exchange MyValues",
   "description": "Show your stock exchange values imported from another trading board in your Boursorama List.",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "author": "Germain LEFEBVRE",
 
   "options_page": "options.html",
-  // "options_ui": {
-  //   "page": "options.html",
-  //   "open_in_tab": false
-  // },
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": false
+  },
   
   "permissions": [
     "activeTab",
@@ -20,14 +20,23 @@
     "cookies",
     "geolocation",
 
+    "https://www.creditmutuel.fr/cmne/fr/banque/PORT_Valo.aspx*",
     "https://www.boursorama.com/espace-membres/mes-listes/*"
   ],
 
-  "content_scripts": [{
-    "css": [],
-    "js": ["main.js"],
-    "matches": [
-      "https://www.boursorama.com/espace-membres/mes-listes/*"
-    ]
-  }]
+  "content_scripts": [
+    {
+      "css": [],
+      "js": ["cmne.js"],
+      "matches": [
+        "https://www.creditmutuel.fr/cmne/fr/banque/PORT_Valo.aspx*"
+      ]
+    },{
+      "css": [],
+      "js": ["boursorama.js"],
+      "matches": [
+        "https://www.boursorama.com/espace-membres/mes-listes/*"
+      ]
+    }
+  ]
 }
