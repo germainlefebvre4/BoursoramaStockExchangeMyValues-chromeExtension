@@ -3,7 +3,7 @@
 
   "name": "Boursorama Stock Exchange MyValues",
   "description": "Show your stock exchange values imported from another trading board in your Boursorama List.",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "author": "Germain LEFEBVRE",
 
   "options_page": "options.html",
