@@ -29,10 +29,11 @@ chrome.storage.sync.get({
         for ( i=0 ; i<stock_rows_length ; i++ ) {
             stock_title = stock_rows[i].children[0].children[0].children[0].children[0].innerHTML;
             stock_now_value = Number(stock_rows[i].children[1].innerHTML);
+            stock_opening_value = Number(stock_rows[i].children[3].innerHTML);
             stock_yesterday_value = Number(stock_rows[i].children[7].innerHTML);
             
             stock_my = stock_my_values[stock_title];
-            stock_var_yesterday_data = Number.parseFloat((stock_now_value/stock_yesterday_value-1)*100).toPrecision(2) + '%';;
+            stock_var_yesterday_data = Number.parseFloat((stock_opening_value/stock_yesterday_value-1)*100).toPrecision(2) + '%';;
 
             stock_my_cell = stock_rows[i].insertCell(1);
             stock_perc_cell = stock_rows[i].insertCell(2);
@@ -63,11 +64,10 @@ chrome.storage.sync.get({
                 stock_perc_cell.outerHTML = '<td class="c-table__cell c-table__cell--dotted "></td>';
             }
             
-
-            if (stock_var_yesterday_data < stock_now_value) {
-                stock_var_yest_cell.outerHTML = '<td class="c-table__cell c-table__cell--dotted " data-sort-value="' + stock_var_yesterday_data + '"><div style="color:#2cc357;">' + stock_var_yesterday_data + '</div></td>';
-            } else {
+            if (stock_opening_value < stock_yesterday_value) {
                 stock_var_yest_cell.outerHTML = '<td class="c-table__cell c-table__cell--dotted " data-sort-value="' + stock_var_yesterday_data + '"><div style="color:#f11c3a;">' + stock_var_yesterday_data + '</div></td>';
+            } else {
+                stock_var_yest_cell.outerHTML = '<td class="c-table__cell c-table__cell--dotted " data-sort-value="' + stock_var_yesterday_data + '"><div style="color:#2cc357;">' + stock_var_yesterday_data + '</div></td>';
             }
         }
 
