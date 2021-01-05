@@ -3,7 +3,7 @@
 
   "name": "Boursorama Stock Exchange MyValues",
   "description": "Show your stock exchange values imported from another trading board in your Boursorama List.",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "author": "Germain LEFEBVRE",
 
   "options_page": "options.html",
@@ -29,7 +29,8 @@
       "css": [],
       "js": ["cmne.js"],
       "matches": [
-        "https://www.creditmutuel.fr/cmne/fr/banque/PORT_Valo.aspx*"
+        "https://www.creditmutuel.fr/cmne/fr/banque/PORT_Valo.aspx*",
+        "https://www.creditmutuel.fr/cmne/fr/banque/SYNT*"
       ]
     },{
       "css": [],

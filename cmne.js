@@ -5,6 +5,9 @@
         Values are retrieved from the trading platform.
 */
 myValues = {}
+/*
+    Dictionary key=value of mapping CMNE/Boursorama stocks name
+*/
 stockExchangeNameMapping = {
     "BNP PARIBAS ACTIONS A": "BNP PARIBAS",
     "CASINO GUICHARD-PERRACHON": "CASINO GUICHARD PERRACHON",
